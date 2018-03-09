@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
     <link rel="stylesheet" href="carddesigner.css">
@@ -77,10 +78,27 @@
             <div class="tab-pane" id="card-front">
                     <div>
                         <div class="canvasContainer">
-                            <canvas id="canvasFront" width="300" height="413" style="border:1px solid #d3d3d3;">
+                            <canvas id="canvasFront1" width="300" height="413" class=""></canvas>
+                            <canvas id="canvasFront2" width="413" height="300" class="hidden"></canvas>                            
                         </div>
                         <div class="canvasDataContainer">
                                 <form>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                                <a data-toggle="collapse" href="#frontConfig">Configuration</a>
+                                        </div>
+                                        <div class="panel-body collapse show" id="frontConfig">                                                
+                                                <div class="btn-group btn-group-toggle size-buttons" data-toggle="buttons">
+                                                    <label class="btn btn-secondary active">
+                                                        <input type="radio" name="options" id="front600" autocomplete="off" checked> <i class="fa fa-id-badge"></i> 600x825px
+                                                    </label>
+                                                    <label class="btn btn-secondary">
+                                                        <input type="radio" name="options" id="front825" autocomplete="off"> <i class="fa fa-image"></i> 825x600px
+                                                    </label>
+                                                </div>                     
+                                        </div>
+                                    </div>
+
                                     <div class="panel panel-default layer layer-img">
                                         <div class="panel-heading">
                                                 <a data-toggle="collapse" href="#layer01Data">Layer 01: Image</a>
@@ -172,11 +190,11 @@
                                                 </div>  
                                                 <div class="form-group form-inline">
                                                         <label for="cardFrontFile">X</label>
-                                                        <input type="number" class="form-control cardFrontX" value="450">                                                            
+                                                        <input type="number" class="form-control cardFrontX" value="75">                                                            
                                                         <label for="cardFrontFile">Y</label>
-                                                        <input type="number" class="form-control cardFrontY" value="100">
+                                                        <input type="number" class="form-control cardFrontY" value="150">
                                                         <label for="cardFrontFile">Rotation (0-360)</label>
-                                                        <input type="number" class="form-control cardFrontRotation" value="90">
+                                                        <input type="number" class="form-control cardFrontRotation" value="0">
                                                 </div>  
                                         </div>
                                     </div>
@@ -193,12 +211,12 @@
     </div>
     <!-- Optional JavaScript -->
     
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <!-- JavaScript -->
+    
+    
     <script src="carddesigner.js"></script>
     
   </body>

@@ -52,9 +52,37 @@ function initializeCardFront(){
         reloadCardFront();
     });
 
-    cardFrontCanvas=document.getElementById("canvasFront");
+    $('#front600').on('change', function (e) {
+        resizeCardFront(300, 413);
+    });
+
+    $('#front825').on('change', function (e) {
+        resizeCardFront(413, 300);
+    });
+
+
+    cardFrontCanvas=document.getElementById("canvasFront2");
     cardFrontCtx=cardFrontCanvas.getContext("2d");
     cardFrontCtx.scale(0.5, 0.5);
+
+    cardFrontCanvas=document.getElementById("canvasFront1");
+    cardFrontCtx=cardFrontCanvas.getContext("2d");
+    cardFrontCtx.scale(0.5, 0.5);    
+}
+
+function resizeCardFront(w, h){
+    cardFrontCtx.clearRect(0, 0, 1000, 1000);
+    cardFrontCanvas.classList.add("hidden");
+
+    if (w==300){
+        cardFrontCanvas=document.getElementById("canvasFront1");
+        cardFrontCtx=cardFrontCanvas.getContext("2d");
+    } else {
+        cardFrontCanvas=document.getElementById("canvasFront2");
+        cardFrontCtx=cardFrontCanvas.getContext("2d");
+    }
+
+    cardFrontCanvas.classList.remove("hidden");
 }
 
 function reloadCardFront(){

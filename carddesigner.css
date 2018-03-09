@@ -1,19 +1,20 @@
 
 
+
 canvas {
-    width:300px;
-    height:413px;
+    border:1px solid #d3d3d3;
 }
+
 
 .canvasContainer {
     margin-top: 20px;
-    width:35%;
+    width:50%;
     display: inline-block;
 }
 
 .canvasDataContainer {
     margin-top: 20px;
-    width:64%;
+    width:49%;
     display: inline-block;
     vertical-align: top;
 }
@@ -44,6 +45,18 @@ canvas {
 
 #btnCardFrontLoad {
     margin-top: 15px;
+}
+
+.size-buttons {
+    margin-bottom: 25px;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show > .btn-secondary.dropdown-toggle {
+    background-color: green;
+}
+
+.hidden{
+    display: none;
 }
 
 
