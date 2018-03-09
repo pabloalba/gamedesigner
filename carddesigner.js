@@ -10,6 +10,7 @@ let listLayersFront = [];
 let currentLayerFront = 0;
 let currentXFront = 0;
 let currentYFront = 0;
+let currentFonts = "";
 
 $( document ).ready(function() {
     initialize();
@@ -60,6 +61,11 @@ function initializeCardFront(){
         resizeCardFront(413, 300);
     });
 
+    $("#cardFrontFonts").on('blur', function (e) {
+        reloadFonts();
+    });
+
+    reloadFonts();
 
     cardFrontCanvas=document.getElementById("canvasFront2");
     cardFrontCtx=cardFrontCanvas.getContext("2d");
@@ -68,6 +74,11 @@ function initializeCardFront(){
     cardFrontCanvas=document.getElementById("canvasFront1");
     cardFrontCtx=cardFrontCanvas.getContext("2d");
     cardFrontCtx.scale(0.5, 0.5);    
+}
+
+function reloadFonts(){
+    let fontscss = $("#cardFrontFonts").val();
+    $("#font-styles").attr("href", fontscss);
 }
 
 function resizeCardFront(w, h){
@@ -90,7 +101,6 @@ function reloadCardFront(){
 
     listLayersFront = $(".layer");    
     currentLayerFront = 0;
-
     processNextLayer();
 }
 
