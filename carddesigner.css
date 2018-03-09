@@ -1,0 +1,49 @@
+
+
+canvas {
+    width:300px;
+    height:413px;
+}
+
+.canvasContainer {
+    margin-top: 20px;
+    width:35%;
+    display: inline-block;
+}
+
+.canvasDataContainer {
+    margin-top: 20px;
+    width:64%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.cardBackImage, .cardFrontImage {
+    visibility: hidden;
+    display: none;
+}
+
+
+.panel {
+    border: 1px solid lightgray;
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+
+.panel-heading {
+    position: relative;
+    top: -15px;
+    background-color: white;
+    color: gray;
+    display: inline-block;
+}
+
+.w100 {
+    width:100%;
+}
+
+#btnCardFrontLoad {
+    margin-top: 15px;
+}
+
+

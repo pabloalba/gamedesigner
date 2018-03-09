@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+    <link rel="stylesheet" href="carddesigner.css">
+    <title>Card designer</title>
+  </head>
+  <body>
+    <div class="container">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Card designer</a>
+                <span>Deck01</span>              
+        </nav>    
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#card-list" data-toggle="tab">Card list</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#card-back" data-toggle="tab">Card back</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#card-front" data-toggle="tab">Card front</a>
+            </li>
+        </ul>
+
+
+        <div class="tab-content clearfix">
+            <div class="tab-pane active" id="card-list">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane" id="card-back">
+                <div>
+                    <div class="canvasContainer">
+                        <canvas id="canvasBack" width="300" height="413" style="border:1px solid #d3d3d3;">
+                    </div>
+                    <div class="canvasDataContainer">
+                            <form>
+                                <div class="form-group">
+                                        <label for="cardBackFile">Image file</label>
+                                        <input type="text" class="form-control cardBackFile" id="cardBackFile" aria-describedby="cardBackFileHelp" value="https://s3.amazonaws.com/www.thegamecrafter.com/templates/mini-card.png">
+                                        <small id="cardBackFileHelp" class="form-text text-muted">The image should be 600x825px</small>
+                                </div>
+                                <button class="btn btn-primary" id="btnCardBackLoad">Load</button>                                
+                            </form>
+                    </div>
+
+                </div>
+                <img class="cardBackImage" src="">
+            </div>
+            <div class="tab-pane" id="card-front">
+                    <div>
+                        <div class="canvasContainer">
+                            <canvas id="canvasFront" width="300" height="413" style="border:1px solid #d3d3d3;">
+                        </div>
+                        <div class="canvasDataContainer">
+                                <form>
+                                    <div class="panel panel-default layer layer-img">
+                                        <div class="panel-heading">
+                                                <a data-toggle="collapse" href="#layer01Data">Layer 01: Image</a>
+                                        </div>
+                                        <div class="panel-body collapse show" id="layer01Data">
+                                                <div class="form-group">
+                                                        <label for="cardFrontFile">Image file</label>
+                                                        <input type="text" class="form-control cardFrontFile" value="https://www.dropbox.com/s/vrpgh14b1kw271s/base.png?dl=0">
+                                                </div>
+                                                <div class="form-group form-inline">
+                                                        <label for="cardFrontFile">X</label>
+                                                        <input type="number" class="form-control cardFrontX" value="0">                                                            
+                                                        <label for="cardFrontFile">Y</label>
+                                                        <input type="number" class="form-control cardFrontY" value="0">
+                                                </div>  
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default  layer layer-img">
+                                        <div class="panel-heading">
+                                            <a data-toggle="collapse" href="#layer02Data">Layer 02: Image</a>
+                                        </div>
+                                        <div class="panel-body collapse" id="layer02Data">
+                                                <div class="form-group">
+                                                        <label for="cardFrontFile">Image file</label>
+                                                        <input type="text" class="form-control cardFrontFile" value="https://www.dropbox.com/s/a8aeycs0fqckqfw/circle.png?dl=0">
+                                                </div>  
+                                                <div class="form-group form-inline">
+                                                        <label for="cardFrontFile">X</label>
+                                                        <input type="number" class="form-control cardFrontX" value="0">                                                            
+                                                        <label for="cardFrontFile">Y</label>
+                                                        <input type="number" class="form-control cardFrontY" value="0">
+                                                </div>  
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default  layer layer-img">
+                                        <div class="panel-heading">
+                                            <a data-toggle="collapse" href="#layer03Data">Layer 03: Image</a>
+                                        </div>
+                                        <div class="panel-body collapse" id="layer03Data">
+                                                <div class="form-group">
+                                                        <label for="cardFrontFile">Image file</label>
+                                                        <input type="text" class="form-control cardFrontFile" value="https://www.dropbox.com/s/uqrjt58s8j76msn/damage.png?dl=0">
+                                                </div>  
+                                                <div class="form-group form-inline">
+                                                        <label for="cardFrontFile">X</label>
+                                                        <input type="number" class="form-control cardFrontX" value="0">                                                            
+                                                        <label for="cardFrontFile">Y</label>
+                                                        <input type="number" class="form-control cardFrontY" value="0">
+                                                </div>  
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default  layer layer-img">
+                                        <div class="panel-heading">
+                                            <a data-toggle="collapse" href="#layer04Data">Layer 04: Image</a>
+                                        </div>
+                                        <div class="panel-body collapse" id="layer04Data">
+                                                <div class="form-group">
+                                                        <label for="cardFrontFile">Image file</label>
+                                                        <input type="text" class="form-control cardFrontFile" value="https://www.dropbox.com/s/00ei8pzgcfsg5p3/paca.png?dl=0">
+                                                </div>  
+                                                <div class="form-group form-inline">
+                                                        <label for="cardFrontFile">X</label>
+                                                        <input type="number" class="form-control cardFrontX" value="0">                                                            
+                                                        <label for="cardFrontFile">Y</label>
+                                                        <input type="number" class="form-control cardFrontY" value="0">
+                                                </div>  
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default  layer layer-text">
+                                        <div class="panel-heading">
+                                            <a data-toggle="collapse" href="#layer05Data">Layer 05: Text</a>
+                                        </div>
+                                        <div class="panel-body collapse" id="layer05Data">
+                                                <div class="form-group">
+                                                        <label for="cardFrontFont">Font</label>
+                                                        <input type="text" class="form-control cardFrontFont" value="80px Rammetto One">
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label for="cardFrontColor">Color</label>
+                                                    <input type="color" class="form-control cardFrontColor" value="#ffffff">
+                                                </div>                                                   
+                                                <div class="form-group">
+                                                    <label for="cardFrontText">Text</label>
+                                                    <input type="text" class="form-control cardFrontText" value="Paca">
+                                                </div>  
+                                                <div class="form-group form-inline">
+                                                        <label for="cardFrontFile">X</label>
+                                                        <input type="number" class="form-control cardFrontX" value="450">                                                            
+                                                        <label for="cardFrontFile">Y</label>
+                                                        <input type="number" class="form-control cardFrontY" value="100">
+                                                        <label for="cardFrontFile">Rotation (0-360)</label>
+                                                        <input type="number" class="form-control cardFrontRotation" value="90">
+                                                </div>  
+                                        </div>
+                                    </div>
+                                        
+                                    
+                                    <button class="btn btn-primary" id="btnCardFrontReload">Reload</button>
+                                </form>
+                        </div>
+    
+                    </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Optional JavaScript -->
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script src="carddesigner.js"></script>
+    
+  </body>
+</html>
