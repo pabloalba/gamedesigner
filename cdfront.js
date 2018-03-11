@@ -76,7 +76,7 @@ function processNextLayer(){
     let cardData = cardsData[$('#sampleCard').val()];
 
     if (layer.hasClass( "layer-img" )){
-        let fileName = layer.find(".cardFrontFile").val();
+        let fileName = layer.find(".cardFrontUrl").val();
 
         for (let i=0;i<varNames.length;i++){
             console.log("Replacing "+varNames[i]);

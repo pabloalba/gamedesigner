@@ -52,8 +52,8 @@
                     </div>
                     <div class="canvasDataContainer">
                             <form>
-                                <div class="form-group">
-                                        <label for="cardBackFile">Image file</label>
+                                <div class="form-group form-inline">
+                                        <label for="cardBackFile">URL</label>
                                         <input type="text" class="form-control cardBackFile" id="cardBackFile" aria-describedby="cardBackFileHelp" value="https://s3.amazonaws.com/www.thegamecrafter.com/templates/mini-card.png">
                                         <small id="cardBackFileHelp" class="form-text text-muted">The image should be 600x825px</small>
                                 </div>
@@ -81,6 +81,7 @@
                         </div>
                         <div class="canvasDataContainer">
                                 <form>
+                                    <br />
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                                 <a data-toggle="collapse" href="#frontConfig">Configuration</a>
@@ -94,7 +95,7 @@
                                                         <input type="radio" name="options" id="front825" autocomplete="off"> <i class="fa fa-image"></i> 825x600px
                                                     </label>
                                                 </div>  
-                                                <div class="form-group">
+                                                <div class="form-group form-inline">
                                                         <label for="cardFrontFonts">Fonts</label>
                                                         <input type="text" class="form-control" rows="5" id="cardFrontFonts" value="" />
                                                 </div>  
@@ -107,14 +108,14 @@
                                                 <a data-toggle="collapse" href="#layer01Data">Layer 01: Image</a>
                                         </div>
                                         <div class="panel-body collapse show" id="layer01Data">
-                                                <div class="form-group">
-                                                        <label for="cardFrontFile">Image file</label>
-                                                        <input type="text" class="form-control cardFrontFile" value="https://www.dropbox.com/s/vrpgh14b1kw271s/base.png?dl=0">
+                                                <div class="form-group form-inline">
+                                                        <label for="cardFrontUrl">URL</label>
+                                                        <input type="text" class="form-control cardFrontUrl" value="https://www.dropbox.com/s/vrpgh14b1kw271s/base.png?dl=0">
                                                 </div>
                                                 <div class="form-group form-inline">
-                                                        <label for="cardFrontFile">X</label>
+                                                        <label for="cardFrontUrl">X</label>
                                                         <input type="number" class="form-control cardFrontX" value="0">                                                            
-                                                        <label for="cardFrontFile">Y</label>
+                                                        <label for="cardFrontUrl">Y</label>
                                                         <input type="number" class="form-control cardFrontY" value="0">
                                                 </div>  
                                         </div>
@@ -125,14 +126,14 @@
                                             <a data-toggle="collapse" href="#layer02Data">Layer 02: Image</a>
                                         </div>
                                         <div class="panel-body collapse" id="layer02Data">
-                                                <div class="form-group">
-                                                        <label for="cardFrontFile">Image file</label>
-                                                        <input type="text" class="form-control cardFrontFile" value="https://www.dropbox.com/s/a8aeycs0fqckqfw/circle.png?dl=0">
+                                                <div class="form-group form-inline">
+                                                        <label for="cardFrontUrl">URL</label>
+                                                        <input type="text" class="form-control cardFrontUrl" value="https://www.dropbox.com/s/a8aeycs0fqckqfw/circle.png?dl=0">
                                                 </div>  
                                                 <div class="form-group form-inline">
-                                                        <label for="cardFrontFile">X</label>
+                                                        <label for="cardFrontUrl">X</label>
                                                         <input type="number" class="form-control cardFrontX" value="0">                                                            
-                                                        <label for="cardFrontFile">Y</label>
+                                                        <label for="cardFrontUrl">Y</label>
                                                         <input type="number" class="form-control cardFrontY" value="0">
                                                 </div>  
                                         </div>
@@ -143,14 +144,14 @@
                                             <a data-toggle="collapse" href="#layer03Data">Layer 03: Image</a>
                                         </div>
                                         <div class="panel-body collapse" id="layer03Data">
-                                                <div class="form-group">
-                                                        <label for="cardFrontFile">Image file</label>
-                                                        <input type="text" class="form-control cardFrontFile" value="https://www.dropbox.com/s/uqrjt58s8j76msn/damage.png?dl=0">
+                                                <div class="form-group form-inline">
+                                                        <label for="cardFrontUrl">URL</label>
+                                                        <input type="text" class="form-control cardFrontUrl" value="https://www.dropbox.com/s/uqrjt58s8j76msn/damage.png?dl=0">
                                                 </div>  
                                                 <div class="form-group form-inline">
-                                                        <label for="cardFrontFile">X</label>
+                                                        <label for="cardFrontUrl">X</label>
                                                         <input type="number" class="form-control cardFrontX" value="0">                                                            
-                                                        <label for="cardFrontFile">Y</label>
+                                                        <label for="cardFrontUrl">Y</label>
                                                         <input type="number" class="form-control cardFrontY" value="0">
                                                 </div>  
                                         </div>
@@ -161,14 +162,14 @@
                                             <a data-toggle="collapse" href="#layer04Data">Layer 04: Image</a>
                                         </div>
                                         <div class="panel-body collapse" id="layer04Data">
-                                                <div class="form-group">
-                                                        <label for="cardFrontFile">Image file</label>
-                                                        <input type="text" class="form-control cardFrontFile" value="${image}">
+                                                <div class="form-group form-inline">
+                                                        <label for="cardFrontUrl">URL</label>
+                                                        <input type="text" class="form-control cardFrontUrl" value="${image}">
                                                 </div>  
                                                 <div class="form-group form-inline">
-                                                        <label for="cardFrontFile">X</label>
+                                                        <label for="cardFrontUrl">X</label>
                                                         <input type="number" class="form-control cardFrontX" value="0">                                                            
-                                                        <label for="cardFrontFile">Y</label>
+                                                        <label for="cardFrontUrl">Y</label>
                                                         <input type="number" class="form-control cardFrontY" value="0">
                                                 </div>  
                                         </div>
@@ -179,24 +180,22 @@
                                             <a data-toggle="collapse" href="#layer05Data">Layer 05: Text</a>
                                         </div>
                                         <div class="panel-body collapse" id="layer05Data">
-                                                <div class="form-group">
+                                                <div class="form-group form-inline">
                                                         <label for="cardFrontFont">Font</label>
                                                         <input type="text" class="form-control cardFrontFont" value="80px Rammetto One">
-                                                </div> 
-                                                <div class="form-group">
-                                                    <label for="cardFrontColor">Color</label>
+                                                        <label for="cardFrontColor">Color</label>
                                                     <input type="color" class="form-control cardFrontColor" value="#ffffff">
-                                                </div>                                                   
-                                                <div class="form-group">
+                                                </div>                                                 
+                                                <div class="form-group form-inline">
                                                     <label for="cardFrontText">Text</label>
                                                     <input type="text" class="form-control cardFrontText" value="${title}">
                                                 </div>  
                                                 <div class="form-group form-inline">
-                                                        <label for="cardFrontFile">X</label>
+                                                        <label for="cardFrontUrl">X</label>
                                                         <input type="number" class="form-control cardFrontX" value="75">                                                            
-                                                        <label for="cardFrontFile">Y</label>
+                                                        <label for="cardFrontUrl">Y</label>
                                                         <input type="number" class="form-control cardFrontY" value="150">
-                                                        <label for="cardFrontFile">Rotation (0-360)</label>
+                                                        <label for="cardFrontUrl">Rotation</label>
                                                         <input type="number" class="form-control cardFrontRotation" value="0">
                                                 </div>  
                                         </div>
@@ -204,27 +203,28 @@
 
                                     <div class="panel panel-default  layer layer-text">
                                             <div class="panel-heading">
-                                                <a data-toggle="collapse" href="#layer05Data">Layer 06: Text</a>
+                                                <a data-toggle="collapse" href="#layer06Data">Layer 06: Text</a>
                                             </div>
-                                            <div class="panel-body collapse" id="layer05Data">
-                                                    <div class="form-group">
+                                            <div class="panel-body collapse" id="layer06Data">
+                                                    <div class="form-group form-inline">
                                                             <label for="cardFrontFont">Font</label>
                                                             <input type="text" class="form-control cardFrontFont" value="60px Monserrat">
+
+                                                            <label for="cardFrontColor">Color</label>
+                                                            <input type="color" class="form-control cardFrontColor" value="#000000">
                                                     </div> 
-                                                    <div class="form-group">
-                                                        <label for="cardFrontColor">Color</label>
-                                                        <input type="color" class="form-control cardFrontColor" value="#000000">
+                                                    <div class="form-group form-inline">                                                        
                                                     </div>                                                   
-                                                    <div class="form-group">
+                                                    <div class="form-group form-inline">
                                                         <label for="cardFrontText">Text</label>
                                                         <input type="text" class="form-control cardFrontText" value="${strength}">
                                                     </div>  
                                                     <div class="form-group form-inline">
-                                                            <label for="cardFrontFile">X</label>
+                                                            <label for="cardFrontUrl">X</label>
                                                             <input type="number" class="form-control cardFrontX" value="712">                                                            
-                                                            <label for="cardFrontFile">Y</label>
+                                                            <label for="cardFrontUrl">Y</label>
                                                             <input type="number" class="form-control cardFrontY" value="195">
-                                                            <label for="cardFrontFile">Rotation (0-360)</label>
+                                                            <label for="cardFrontUrl">Rotation</label>
                                                             <input type="number" class="form-control cardFrontRotation" value="0">
                                                     </div>  
                                             </div>
