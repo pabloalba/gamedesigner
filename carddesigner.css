@@ -59,4 +59,12 @@ canvas {
     display: none;
 }
 
+#card-list-buttons {
+    text-align: right;
+}
+
+#sampleCard {
+    margin-top: 25px;
+}
+
 
