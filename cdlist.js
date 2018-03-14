@@ -6,7 +6,15 @@ function initializeCardList(){
 
     $( document ).on( 'blur', '#cardsTable input', function (e) {
         saveDataChanges(e.target);
-    }); 
+    });
+
+    $('#btnAddColumn').on('click', function (e) {
+        addColumn();
+    });
+
+    $('#addColumnModal').on('hidden.bs.modal', function () {
+        $(this).find('form').trigger('reset');
+    })
 }
 
 
@@ -32,11 +40,11 @@ function regenerateTable(){
     let tbody = $("<tbody id='cardsTableBody'></tbody>");
     $("#cardsTable").append(tbody);
 
-    
+
     for (let numCard=0;numCard<cardsData.length;numCard++){
         addLine(numCard+1,cardsData[numCard]);
     }
-    
+
 }
 
 function addEmptyLine(){
@@ -46,7 +54,7 @@ function addEmptyLine(){
 
 function addLine(numLine, lineData){
     console.log(lineData);
-    tr = $("<tr class='card-data'></tr>");    
+    tr = $("<tr class='card-data'></tr>");
     tr.append($("<th scope='row'>"+numLine+"</th>"));
     for (let i=0;i<varNames.length;i++){
         tr.append(
@@ -67,6 +75,21 @@ function saveDataChanges(item){
     item = $(item);
     cardsData[item.attr("data-numcard")][item.attr("data-var")] = item.val();
     updateSampleCardList();
+}
+
+function addColumn(){
+    console.log("Add column");
+    let name = $("#newColumnName").val();
+    if (varNames.indexOf(name)>-1){
+        alert("That column already exists");
+    } else {
+        varNames.push(name);
+        for (let numCard=0;numCard<cardsData.length;numCard++){
+            cardsData[numCard][name]="";
+            regenerateTable();
+        }
+    }
+    
 }
 
 
