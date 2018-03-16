@@ -36,11 +36,30 @@ canvas {
 
 .panel-heading {
     position: relative;
-    top: -15px;
+    top: -15px;    
+    display: inline-block;
+    width:100%;
+}
+
+.panel-heading span:first-child {
     background-color: white;
-    color: gray;
+    padding: 0 5px;    
+}
+
+.panel-heading div {
+    width: 49%;
     display: inline-block;
 }
+
+.panel-heading div:last-child {
+    text-align: right;
+}
+
+.layer-ctrl {
+    cursor: pointer;
+}
+
+
 
 .w100 {
     width:100%;
@@ -62,7 +81,7 @@ canvas {
     display: none;
 }
 
-#card-list-buttons {
+.buttons-container {
     text-align: right;
 }
 
