@@ -53,7 +53,6 @@ function addEmptyLine(){
 }
 
 function addLine(numLine, lineData){
-    console.log(lineData);
     tr = $("<tr class='card-data'></tr>");
     tr.append($("<th scope='row'>"+numLine+"</th>"));
     for (let i=0;i<varNames.length;i++){
@@ -78,7 +77,6 @@ function saveDataChanges(item){
 }
 
 function addColumn(){
-    console.log("Add column");
     let name = $("#newColumnName").val();
     if (varNames.indexOf(name)>-1){
         alert("That column already exists");

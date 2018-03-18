@@ -30,7 +30,7 @@ function initializeCardFront(){
     });
 
     $("#btnAddImageLayer").on('click', function (e) {
-        addImageLayer("aaa",1,2);
+        addImageLayer();
     });
 
     $("#btnAddTextLayer").on('click', function (e) {
@@ -62,6 +62,29 @@ function initializeCardFront(){
     cardFrontCtx.scale(0.5, 0.5);    
 }
 
+function regenerateFrontLayers(){
+    $("#layersForm").empty();
+    for (let numLayer=0;numLayer<frontLayersData.length;numLayer++){
+        let layer = frontLayersData[numLayer];
+        if (layer["type"]=="image"){
+            createImageLayer(numLayer, layer);
+        } else if (layer["type"]=="text"){
+            createTextLayer(numLayer, layer);
+        }        
+    }
+}
+
+function regenerateFrontConfig(direction, fonts){
+    if (direction == "v") {
+        $("#front600").click();
+    } else {
+        $("#front825").click();
+    }
+
+    $("#cardFrontFonts").val(fonts);
+    reloadFonts();
+}
+
 function reloadFonts(){
     let fontscss = $("#cardFrontFonts").val();
     $("#font-styles").attr("href", fontscss);
@@ -83,11 +106,13 @@ function resizeCardFront(mode){
 }
 
 function reloadCardFront(){
-    cardFrontCtx.clearRect(0, 0, 1000, 1000);
+    if (ready) {
+        cardFrontCtx.clearRect(0, 0, 1000, 1000);
 
-    listLayersFront = $(".layer");    
-    currentLayerFront = 0;
-    processNextLayer();
+        listLayersFront = $(".layer");    
+        currentLayerFront = 0;
+        processNextLayer();
+    }
 }
 
 function processNextLayer(){
@@ -188,29 +213,41 @@ function moveLayerDown(element){
     layer.next(".layer").insertBefore(layer);
 }
 
-function addImageLayer(url, x, y){
+function addImageLayer(){
+    frontLayersData.push(emptyImageLayerData);
+    createImageLayer(frontLayersData.length, emptyImageLayerData)
+}
+
+function addTextLayer(){
+    frontLayersData.push(emptyTextLayerData);
+    createTextLayer(frontLayersData.length, emptyTextLayerData)
+}
+
+function createImageLayer(numLayer, data){
     let layer = $(emptyImgLayer);
     let layerId = "layer" + new Date().getTime();    
     layer.find(".layer-name a").attr("href", "#"+layerId);
     layer.find(".panel-body").attr("id", layerId);
-    layer.find(".cardFrontUrl").val(url);
-    layer.find(".cardFrontX").val(x);
-    layer.find(".cardFrontY").val(y);
+    layer.find(".cardFrontUrl").val(data["url"]);
+    layer.find(".cardFrontX").val(data["x"]);
+    layer.find(".cardFrontY").val(data["y"]);
+    layer.attr("data-numlayer", numLayer);
 
     $("#layersForm").append(layer);
 }
 
-function addTextLayer(text, font, color, x, y, rotation){
+function createTextLayer(numLayer, data){
     let layer = $(emptyTextLayer);
     let layerId = "layer" + new Date().getTime();    
     layer.find(".layer-name a").attr("href", "#"+layerId);
     layer.find(".panel-body").attr("id", layerId);
-    layer.find(".cardFrontFont").val(font);
-    layer.find(".cardFrontColor").val(color);
-    layer.find(".cardFrontText").val(text);    
-    layer.find(".cardFrontX").val(x);
-    layer.find(".cardFrontY").val(y);
-    layer.find(".cardFrontRotation").val(rotation);
+    layer.find(".cardFrontFont").val(data["font"]);
+    layer.find(".cardFrontColor").val(data["color"]);
+    layer.find(".cardFrontText").val(data["text"]);    
+    layer.find(".cardFrontX").val(data["x"]);
+    layer.find(".cardFrontY").val(data["y"]);
+    layer.find(".cardFrontRotation").val(data["rotation"]);
+    layer.attr("data-numlayer", numLayer);
 
     $("#layersForm").append(layer);
 
@@ -293,3 +330,21 @@ let emptyTextLayer = `
 </div>
 `;
 
+let emptyImgLayerData = {
+    "type": "image",
+    "show": true,
+    "url": "",
+    "x": 0,
+    "y": 0
+};
+
+let emptyTextLayerData ={
+    "type": "text",
+    "show": true,
+    "font": "48px Arial",
+    "color": "#000000",
+    "text": "",
+    "x": 0,
+    "y": 0,
+    "rotation": 0
+};
